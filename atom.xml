@@ -41,20 +41,22 @@
     <link href="https://gengxuelei.github.io/2017/12/11/test/"/>
     <id>https://gengxuelei.github.io/2017/12/11/test/</id>
     <published>2017-12-11T09:53:11.000Z</published>
-    <updated>2017-12-20T03:47:26.836Z</updated>
+    <updated>2017-12-20T07:55:03.438Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一段简短的描述，对这篇文章有个小的总结123</p><h2 id="这是一个测试文档"><a href="#这是一个测试文档" class="headerlink" title="这是一个测试文档"></a>这是一个测试文档</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">var b=2;</span><br><span class="line">console.log(a+b);</span><br></pre></td></tr></table></figure><p><strong>这是一个斜体</strong><br>这是一段<code>function</code>代码</p>]]></content>
+    <content type="html"><![CDATA[<p>这是一段简短的描述，对这篇文章有个小的总结</p><h2 id="这是一个测试文档"><a href="#这是一个测试文档" class="headerlink" title="这是一个测试文档"></a>这是一个测试文档</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a=1;</span><br><span class="line">var b=2;</span><br><span class="line">console.log(a+b);</span><br></pre></td></tr></table></figure><p><strong>这是一个斜体</strong><br>这是一段<code>function</code>代码</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;这是一段简短的描述，对这篇文章有个小的总结123&lt;/p&gt;
-&lt;h2 id=&quot;这是一个测试文档&quot;&gt;&lt;a href=&quot;#这是一个测试文档&quot; class=&quot;headerlink&quot; title=&quot;这是一个测试文档&quot;&gt;&lt;/a&gt;这是一个测试文档&lt;/h2&gt;&lt;figure class=&quot;hi
+        &lt;p&gt;这是一段简短的描述，对这篇文章有个小的总结&lt;/p&gt;
+&lt;h2 id=&quot;这是一个测试文档&quot;&gt;&lt;a href=&quot;#这是一个测试文档&quot; class=&quot;headerlink&quot; title=&quot;这是一个测试文档&quot;&gt;&lt;/a&gt;这是一个测试文档&lt;/h2&gt;&lt;figure class=&quot;highl
       
     
     </summary>
     
+    
+      <category term="test" scheme="https://gengxuelei.github.io/tags/test/"/>
     
   </entry>
   
