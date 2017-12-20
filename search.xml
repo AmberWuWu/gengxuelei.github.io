@@ -9,6 +9,9 @@
     <title><![CDATA[test]]></title>
     <url>%2F2017%2F12%2F11%2Ftest%2F</url>
     <content type="text"><![CDATA[这是一段简短的描述，对这篇文章有个小的总结 这是一个测试文档123var a=1;var b=2;console.log(a+b); 这是一个斜体这是一段function代码]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
         <tag>test</tag>
       </tags>
