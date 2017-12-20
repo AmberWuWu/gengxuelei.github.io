@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[天涯浪逍遥]]></title>
+    <url>%2F2017%2F12%2F20%2F%E5%A4%A9%E6%B6%AF%E6%B5%AA%E9%80%8D%E9%81%A5%2F</url>
+    <content type="text"><![CDATA[曾为你画地为牢风也萧萧雨也萧萧中了爱你的蛊怎么逃又是一季韶华老鬓发已微醺君未归寂寞心事谁人聊犹记当时年少情字刻心头許一世只为君折腰如今月已上柳梢人归花向晚整行囊天涯浪逍遥]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo搭建小记]]></title>
+    <url>%2F2017%2F12%2F20%2Fhexo%E6%90%AD%E5%BB%BA%E5%B0%8F%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[搭建过程 首先创建username.github.io的仓库（以username为前缀的话，pages服务只能是master分支） 然后创建hexo仓库，用来维护源码 &amp; nuxt主题配置 根据博主 shenzekun 的 教程 进行配置 修改模板文件，更改cdn路径加快国内访问速度 替换 googleapisLUG@USTC Google Fonts 加速服务：https://lug.ustc.edu.cn/wiki/lug/services/googlefonts 原地址 新地址 301地址 fonts.googleapis.com fonts.lug.ustc.edu.cn fonts.proxy.ustclug.org ajax.googleapis.com ajax.lug.ustc.edu.cn ajax.proxy.ustclug.org themes.googleusercontent.com google-themes.lug.ustc.edu.cn google-themes.proxy.ustclug.org fonts.gstatic.com fonts-gstatic.lug.ustc.edu.cn fonts-gstatic.proxy.ustclug.org 附加资源在线沟通：http://daovoice.io/ bass服务：https://leancloud.cn/ 图标网站1：http://www.easyicon.net/update/ 图标网站2：http://fontawesome.io/icons/ 怎样制作属于自己的Live2D角色？https://www.g-cores.com/articles/19597]]></content>
+      <categories>
+        <category>小记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F12%2F20%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[test]]></title>
-    <url>%2F2017%2F12%2F11%2Ftest%2F</url>
-    <content type="text"><![CDATA[这是一段简短的描述，对这篇文章有个小的总结 这是一个测试文档123var a=1;var b=2;console.log(a+b); 这是一个斜体这是一段function代码]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
   </entry>
 </search>
