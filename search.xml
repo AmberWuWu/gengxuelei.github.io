@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[docker的安装配置]]></title>
+    <url>%2F2017%2F12%2F22%2Fdocker%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[docker安装：https://dev.aliyun.com/search.html 通过管理中心进去获取自己的国内镜像加速器（注册登录阿里云账号）： 图中打叉的请直接忽略掉（大坑），直接把如下链接对应的docker客户端下载安装即可，安装会提示你升级到最新版，请忽略掉（大坑），让你重启就乖乖听话。 Windows系统的安装文件目录：http://mirrors.aliyun.com/docker-toolbox/windows/docker-for-windows/ 配置镜像方式如下： 第二行请参照上文获取到的加速器（配置docker-cn+阿里云加速两个加速器） 阿里云镜像搜索： https://dev.aliyun.com/search.html 菜鸟教程： http://www.runoob.com/docker/docker-tutorial.html 常用命令：12345678910111213docker version // 查看版本docker info // 查看配置信息docker images // 查看imagesdocker ps -a // 查看containerdocker pull &lt;registry&gt; // 从镜像仓库中拉取或者更新指定镜像docker run &lt;registry&gt; // 创建一个新的容器并运行一个命令docker exec &lt;container&gt; // 在运行的容器中执行命令 1234567891011docker run/exec-i 交互式 -t 伪终端 -d 守护进程后台运行一般会使用-it参数进入（退出后进程关闭），需要进程持续运行添加-d参数docker rm 删除container-v 删除本地挂载目录，-f强制删除docker rmi 删除image centos7安装docker：https://yq.aliyun.com/articles/110806 新手先安装好docker ，然后docker version和docker info看一下，然后看一下菜鸟教程能够有个大致了解即可。老鸟请忽略以上内容。 祝君好运😀]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[天涯浪逍遥]]></title>
     <url>%2F2017%2F12%2F20%2F%E5%A4%A9%E6%B6%AF%E6%B5%AA%E9%80%8D%E9%81%A5%2F</url>
     <content type="text"><![CDATA[曾为你画地为牢风也萧萧雨也萧萧中了爱你的蛊怎么逃又是一季韶华老鬓发已微醺君未归寂寞心事谁人聊犹记当时年少情字刻心头許一世只为君折腰如今月已上柳梢人归花向晚整行囊天涯浪逍遥]]></content>
@@ -11,7 +22,7 @@
   <entry>
     <title><![CDATA[hexo搭建小记]]></title>
     <url>%2F2017%2F12%2F20%2Fhexo%E6%90%AD%E5%BB%BA%E5%B0%8F%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[搭建过程 首先创建username.github.io的仓库（以username为前缀的话，pages服务只能是master分支） 然后创建hexo仓库，用来维护源码 &amp; nuxt主题配置 根据博主 shenzekun 的 教程 进行配置 修改模板文件，更改cdn路径加快国内访问速度 替换 googleapisLUG@USTC Google Fonts 加速服务：https://lug.ustc.edu.cn/wiki/lug/services/googlefonts 原地址 新地址 301地址 fonts.googleapis.com fonts.lug.ustc.edu.cn fonts.proxy.ustclug.org ajax.googleapis.com ajax.lug.ustc.edu.cn ajax.proxy.ustclug.org themes.googleusercontent.com google-themes.lug.ustc.edu.cn google-themes.proxy.ustclug.org fonts.gstatic.com fonts-gstatic.lug.ustc.edu.cn fonts-gstatic.proxy.ustclug.org 附加资源在线沟通：http://daovoice.io/ bass服务：https://leancloud.cn/ 图标网站1：http://www.easyicon.net/update/ 图标网站2：http://fontawesome.io/icons/ hexo系列文章：https://segmentfault.com/u/adam_home 怎样制作属于自己的Live2D角色？https://www.g-cores.com/articles/19597]]></content>
+    <content type="text"><![CDATA[搭建过程 首先创建username.github.io的仓库（以username为前缀的话，pages服务只能是master分支） 然后创建hexo仓库，用来维护源码 &amp; nuxt主题配置 根据博主 shenzekun 的 教程 进行配置 修改模板文件，更改cdn路径加快国内访问速度 替换 googleapisLUG@USTC Google Fonts 加速服务：https://lug.ustc.edu.cn/wiki/lug/services/googlefonts 原地址 新地址 301地址 fonts.googleapis.com fonts.lug.ustc.edu.cn fonts.proxy.ustclug.org ajax.googleapis.com ajax.lug.ustc.edu.cn ajax.proxy.ustclug.org themes.googleusercontent.com google-themes.lug.ustc.edu.cn google-themes.proxy.ustclug.org fonts.gstatic.com fonts-gstatic.lug.ustc.edu.cn fonts-gstatic.proxy.ustclug.org 附加资源在线沟通：http://daovoice.io/ bass服务：https://leancloud.cn/ 图标网站1：http://www.easyicon.net/update/ 图标网站2：http://fontawesome.io/icons/ hexo系列文章：https://segmentfault.com/u/adam_home Next主题使用指南：http://theme-next.iissnan.com/getting-started.html Hexo博客优化，如何加快你的博客访问速度(精)http://www.joryhe.com/2016-06-05-hexo_site_seo_speed_more_optimization.html 怎样制作属于自己的Live2D角色？https://www.g-cores.com/articles/19597]]></content>
       <categories>
         <category>小记</category>
       </categories>
