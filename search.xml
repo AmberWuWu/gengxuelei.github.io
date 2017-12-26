@@ -1,39 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[docker的安装配置]]></title>
-    <url>%2F2017%2F12%2F22%2Fdocker%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[docker安装：https://dev.aliyun.com/search.html 通过管理中心进去获取自己的国内镜像加速器（注册登录阿里云账号）： 图中打叉的请直接忽略掉（大坑），直接把如下链接对应的docker客户端下载安装即可，安装会提示你升级到最新版，请忽略掉（大坑），让你重启就乖乖听话。 Windows系统的安装文件目录：http://mirrors.aliyun.com/docker-toolbox/windows/docker-for-windows/ 配置镜像方式如下： 第二行请参照上文获取到的加速器（配置docker-cn+阿里云加速两个加速器） 阿里云镜像搜索： https://dev.aliyun.com/search.html 菜鸟教程： http://www.runoob.com/docker/docker-tutorial.html 常用命令：12345678910111213docker version // 查看版本docker info // 查看配置信息docker images // 查看imagesdocker ps -a // 查看containerdocker pull &lt;registry&gt; // 从镜像仓库中拉取或者更新指定镜像docker run &lt;registry&gt; // 创建一个新的容器并运行一个命令docker exec &lt;container&gt; // 在运行的容器中执行命令 1234567891011docker run/exec-i 交互式 -t 伪终端 -d 守护进程后台运行一般会使用-it参数进入（退出后进程关闭），需要进程持续运行添加-d参数docker rm 删除container-v 删除本地挂载目录，-f强制删除docker rmi 删除image centos7安装docker：https://yq.aliyun.com/articles/110806 新手先安装好docker ，然后docker version和docker info看一下，然后看一下菜鸟教程能够有个大致了解即可。老鸟请忽略以上内容。 祝君好运😀]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[天涯浪逍遥]]></title>
-    <url>%2F2017%2F12%2F20%2F%E5%A4%A9%E6%B6%AF%E6%B5%AA%E9%80%8D%E9%81%A5%2F</url>
-    <content type="text"><![CDATA[曾为你画地为牢风也萧萧雨也萧萧中了爱你的蛊怎么逃又是一季韶华老鬓发已微醺君未归寂寞心事谁人聊犹记当时年少情字刻心头許一世只为君折腰如今月已上柳梢人归花向晚整行囊天涯浪逍遥]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[hexo搭建小记]]></title>
-    <url>%2F2017%2F12%2F20%2Fhexo%E6%90%AD%E5%BB%BA%E5%B0%8F%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[搭建过程 首先创建username.github.io的仓库（以username为前缀的话，pages服务只能是master分支） 然后创建hexo仓库，用来维护源码 &amp; nuxt主题配置 根据博主 shenzekun 的 教程 进行配置 修改模板文件，更改cdn路径加快国内访问速度 替换 googleapisLUG@USTC Google Fonts 加速服务：https://lug.ustc.edu.cn/wiki/lug/services/googlefonts 原地址 新地址 301地址 fonts.googleapis.com fonts.lug.ustc.edu.cn fonts.proxy.ustclug.org ajax.googleapis.com ajax.lug.ustc.edu.cn ajax.proxy.ustclug.org themes.googleusercontent.com google-themes.lug.ustc.edu.cn google-themes.proxy.ustclug.org fonts.gstatic.com fonts-gstatic.lug.ustc.edu.cn fonts-gstatic.proxy.ustclug.org 附加资源在线沟通：http://daovoice.io/ bass服务：https://leancloud.cn/ 图标网站1：http://www.easyicon.net/update/ 图标网站2：http://fontawesome.io/icons/ hexo系列文章：https://segmentfault.com/u/adam_home Next主题使用指南：http://theme-next.iissnan.com/getting-started.html Hexo博客优化，如何加快你的博客访问速度(精)http://www.joryhe.com/2016-06-05-hexo_site_seo_speed_more_optimization.html 怎样制作属于自己的Live2D角色？https://www.g-cores.com/articles/19597]]></content>
-      <categories>
-        <category>小记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F12%2F20%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[docker的安装配置]]></title>
+      <url>/2017/12/22/docker%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="docker安装："><a href="#docker安装：" class="headerlink" title="docker安装："></a>docker安装：</h2><p><a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a></p>
+<p>通过管理中心进去获取自己的国内镜像加速器（注册登录阿里云账号）：</p>
+<img src="/blog/imgs/docker的安装配置/1.png">
+<p><img src="/blog/imgs/docker的安装配置/2.png" alt="avatar"></p>
+<p>图中打叉的请直接忽略掉（大坑），直接把如下链接对应的docker客户端下载安装即可，安装会提示你升级到最新版，请忽略掉（大坑），让你重启就乖乖听话。</p>
+<p>Windows系统的安装文件目录：<a href="http://mirrors.aliyun.com/docker-toolbox/windows/docker-for-windows/" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-toolbox/windows/docker-for-windows/</a></p>
+<p>配置镜像方式如下：<br><img src="/blog/imgs/docker的安装配置/3.png" alt="avatar"></p>
+<p>第二行请参照上文获取到的加速器（配置docker-cn+阿里云加速两个加速器）</p>
+<p>阿里云镜像搜索：</p>
+<p><a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a></p>
+<p>菜鸟教程：</p>
+<p><a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-tutorial.html</a></p>
+<h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker version  //  查看版本</span><br><span class="line"></span><br><span class="line">docker info  //  查看配置信息</span><br><span class="line"></span><br><span class="line">docker images // 查看images</span><br><span class="line"></span><br><span class="line">docker ps  -a  // 查看container</span><br><span class="line"></span><br><span class="line">docker pull &lt;registry&gt;  // 从镜像仓库中拉取或者更新指定镜像</span><br><span class="line"></span><br><span class="line">docker run &lt;registry&gt;  // 创建一个新的容器并运行一个命令</span><br><span class="line"></span><br><span class="line">docker exec &lt;container&gt;  // 在运行的容器中执行命令</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run/exec</span><br><span class="line"></span><br><span class="line">-i 交互式 -t 伪终端 -d 守护进程后台运行</span><br><span class="line"></span><br><span class="line">一般会使用-it参数进入（退出后进程关闭），需要进程持续运行添加-d参数</span><br><span class="line"></span><br><span class="line">docker rm 删除container</span><br><span class="line"></span><br><span class="line">-v 删除本地挂载目录，-f强制删除</span><br><span class="line"></span><br><span class="line">docker rmi 删除image</span><br></pre></td></tr></table></figure>
+<h2 id="centos7安装docker："><a href="#centos7安装docker：" class="headerlink" title="centos7安装docker："></a>centos7安装docker：</h2><p><a href="https://yq.aliyun.com/articles/110806" target="_blank" rel="noopener">https://yq.aliyun.com/articles/110806</a></p>
+<p><em>新手先安装好docker ，然后docker version和docker info看一下，然后看一下菜鸟教程能够有个大致了解即可。老鸟请忽略以上内容。</em></p>
+<p>祝君好运😀</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 后端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[天涯浪逍遥]]></title>
+      <url>/2017/12/20/%E5%A4%A9%E6%B6%AF%E6%B5%AA%E9%80%8D%E9%81%A5/</url>
+      <content type="html"><![CDATA[<div style="text-align:center"><br><br>曾为你画地为牢<br>风也萧萧雨也萧萧<br>中了爱你的蛊怎么逃<br><br>又是一季韶华老<br>鬓发已微醺<br>君未归<br>寂寞心事谁人聊<br><br>犹记当时年少<br>情字刻心头<br>許一世<br>只为君折腰<br><br>如今月已上柳梢<br>人归花向晚<br>整行囊<br>天涯浪逍遥<br></div>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hexo搭建小记]]></title>
+      <url>/2017/12/20/hexo%E6%90%AD%E5%BB%BA%E5%B0%8F%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><ol>
+<li><p>首先创建username.github.io的仓库（以username为前缀的话，pages服务只能是master分支）</p>
+</li>
+<li><p>然后创建hexo仓库，用来维护源码 &amp; nuxt主题配置</p>
+</li>
+<li><p>根据博主 <a href="http://shenzekun.cn/" target="_blank" rel="noopener">shenzekun</a> 的 <a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">教程</a> 进行配置</p>
+</li>
+<li><p>修改模板文件，更改cdn路径加快国内访问速度</p>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="替换-googleapis"><a href="#替换-googleapis" class="headerlink" title="替换 googleapis"></a>替换 googleapis</h2><p>LUG@USTC Google Fonts 加速服务：<br><a href="https://lug.ustc.edu.cn/wiki/lug/services/googlefonts" target="_blank" rel="noopener">https://lug.ustc.edu.cn/wiki/lug/services/googlefonts</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">原地址</th>
+<th style="text-align:left">新地址</th>
+<th style="text-align:left">301地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">fonts.googleapis.com</td>
+<td style="text-align:left">fonts.lug.ustc.edu.cn</td>
+<td style="text-align:left">fonts.proxy.ustclug.org</td>
+</tr>
+<tr>
+<td style="text-align:left">ajax.googleapis.com</td>
+<td style="text-align:left">ajax.lug.ustc.edu.cn</td>
+<td style="text-align:left">ajax.proxy.ustclug.org</td>
+</tr>
+<tr>
+<td style="text-align:left">themes.googleusercontent.com</td>
+<td style="text-align:left">google-themes.lug.ustc.edu.cn</td>
+<td style="text-align:left">google-themes.proxy.ustclug.org</td>
+</tr>
+<tr>
+<td style="text-align:left">fonts.gstatic.com</td>
+<td style="text-align:left">fonts-gstatic.lug.ustc.edu.cn</td>
+<td style="text-align:left">fonts-gstatic.proxy.ustclug.org</td>
+</tr>
+</tbody>
+</table>
+<h2 id="附加资源"><a href="#附加资源" class="headerlink" title="附加资源"></a>附加资源</h2><p>在线沟通：<br><a href="http://daovoice.io/" target="_blank" rel="noopener">http://daovoice.io/</a></p>
+<p>bass服务：<br><a href="https://leancloud.cn/" target="_blank" rel="noopener">https://leancloud.cn/</a></p>
+<p>图标网站1：<br><a href="http://www.easyicon.net/update/" target="_blank" rel="noopener">http://www.easyicon.net/update/</a></p>
+<p>图标网站2：<br><a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">http://fontawesome.io/icons/</a></p>
+<p>hexo系列文章：<br><a href="https://segmentfault.com/u/adam_home" target="_blank" rel="noopener">https://segmentfault.com/u/adam_home</a></p>
+<p>Next主题使用指南：<br><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></p>
+<p>Hexo博客优化，如何加快你的博客访问速度(精)<br><a href="http://www.joryhe.com/2016-06-05-hexo_site_seo_speed_more_optimization.html" target="_blank" rel="noopener">http://www.joryhe.com/2016-06-05-hexo_site_seo_speed_more_optimization.html</a></p>
+<p>怎样制作属于自己的Live2D角色？<br><a href="https://www.g-cores.com/articles/19597" target="_blank" rel="noopener">https://www.g-cores.com/articles/19597</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 小记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>/2017/12/20/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<a id="more"></a>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      
+        
+    </entry>
+    
+  
+  
 </search>
