@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="关于jwt的思考jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：  现有项目架构：12pc项目-&amp;gt;pc服务器-&amp;gt;api服务器app项目-&amp;gt;api服务器 1. jwt是否需要服务器存储用户状态按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个">
+<meta name="description" content="关于jwt的思考jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：  现有项目架构：12pc项目-&amp;gt;pc服务器-&amp;gt;api服务器app项目-&amp;gt;api服务器 jwt是否需要服务器存储用户状态按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个可能需">
 <meta name="keywords" content="jwt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于jwt的思考">
 <meta property="og:url" content="https://gengxuelei.github.io/2017/12/27/关于jwt的思考/index.html">
 <meta property="og:site_name" content="Layne">
-<meta property="og:description" content="关于jwt的思考jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：  现有项目架构：12pc项目-&amp;gt;pc服务器-&amp;gt;api服务器app项目-&amp;gt;api服务器 1. jwt是否需要服务器存储用户状态按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个">
+<meta property="og:description" content="关于jwt的思考jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：  现有项目架构：12pc项目-&amp;gt;pc服务器-&amp;gt;api服务器app项目-&amp;gt;api服务器 jwt是否需要服务器存储用户状态按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个可能需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-27T06:19:42.068Z">
+<meta property="og:updated_time" content="2017-12-27T08:22:47.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于jwt的思考">
-<meta name="twitter:description" content="关于jwt的思考jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：  现有项目架构：12pc项目-&amp;gt;pc服务器-&amp;gt;api服务器app项目-&amp;gt;api服务器 1. jwt是否需要服务器存储用户状态按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个">
+<meta name="twitter:description" content="关于jwt的思考jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：  现有项目架构：12pc项目-&amp;gt;pc服务器-&amp;gt;api服务器app项目-&amp;gt;api服务器 jwt是否需要服务器存储用户状态按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个可能需">
 
 
 
@@ -215,6 +215,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -400,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,385 字
+                  2,375 字
                 </span>
               
 
@@ -442,8 +452,8 @@
 <p>关于jwt的思考<br>jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：</p>
 </blockquote>
 <p><strong>现有项目架构：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pc项目-&gt;pc服务器-&gt;api服务器</span><br><span class="line">app项目-&gt;api服务器</span><br></pre></td></tr></table></figure></p>
-<h2 id="1-jwt是否需要服务器存储用户状态"><a href="#1-jwt是否需要服务器存储用户状态" class="headerlink" title="1. jwt是否需要服务器存储用户状态"></a>1. jwt是否需要服务器存储用户状态</h2><p>按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个可能需要对比测试，但从原理和常识来讲，存库读库的成本应该更高一点。无库产生的加解密开销相对于读写库应该是非常小的，而且无库可以轻松做到跨服务器的认证。</p>
-<h2 id="2-jwt方案中token的安全问题"><a href="#2-jwt方案中token的安全问题" class="headerlink" title="2. jwt方案中token的安全问题"></a>2. jwt方案中token的安全问题</h2><p>分为两个安全问题：</p>
+<h2 id="jwt是否需要服务器存储用户状态"><a href="#jwt是否需要服务器存储用户状态" class="headerlink" title="jwt是否需要服务器存储用户状态"></a>jwt是否需要服务器存储用户状态</h2><p>按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个可能需要对比测试，但从原理和常识来讲，存库读库的成本应该更高一点。无库产生的加解密开销相对于读写库应该是非常小的，而且无库可以轻松做到跨服务器的认证。</p>
+<h2 id="jwt方案中token的安全问题"><a href="#jwt方案中token的安全问题" class="headerlink" title="jwt方案中token的安全问题"></a>jwt方案中token的安全问题</h2><p>两个安全问题：</p>
 <a id="more"></a>
 <ul>
 <li><p>token泄露，泄露一般存在两个地方，1是传输层，2是客户端。先考虑传输层：http被窃听，或者https被破解（https的安全性这里不做讨论），那么如果token在传输层被拦截，传统的cookie存储的sessionId也有一样的问题。再说客户端，一样的情况，如果cookie可以被窃取，token也没办法解决这个问题。已经做过的测试是：拦截到cookie后，把cookie放在另一台电脑上也是可以使用的，这个跟token是一样的。</p>
@@ -452,12 +462,12 @@
 </li>
 </ul>
 <p><strong>综上，jwt碰到的安全问题跟传统方式一样。</strong></p>
-<h2 id="3-jwt如何解决续签问题"><a href="#3-jwt如何解决续签问题" class="headerlink" title="3. jwt如何解决续签问题"></a>3. jwt如何解决续签问题</h2><p>传统的cookie的续签方案一般都是框架自带的，session有效期30分钟，30分钟内如果有访问，session有效期被延长30分钟。那么jwt是怎么实现的呢，细节没看完，不过基本的逻辑是频繁重签名（不知道为什么有人这么干，开销应该不小，而且问题挺多），或者是有效期30分钟，服务器发现token要过期了，提前三分钟重签并返回新的token，客户端每次请求都检测新旧token，如果不一致更新本地token（这个可以放在http的请求预处理里，复杂度和开销都不大）。关于新token的发放导致旧token有效期内的访问失效的问题参见这里的<a href="https://segmentfault.com/q/1010000002449556" target="_blank" rel="noopener">token新旧更替问题讨论</a> 。这种方案就可以实现浏览器里传统cookie的续签需求，以及app7天内登陆就可以持续刷新登陆状态的问题（app比较特殊，每天第一次访问时刷新一下token）。</p>
-<h1 id="4-jwt如何解决注销问题"><a href="#4-jwt如何解决注销问题" class="headerlink" title="4. jwt如何解决注销问题"></a>4. jwt如何解决注销问题</h1><p>好了，jwt最大的问题来了，怎么注销？先看传统的session是怎么注销的：用户点击退出，调用后台退出接口，也就是session注销接口，依托于后台的状态更新。那么服务端做的呢，如果是用文件或者数据库存储的，那么通过删记录是可以后台强制踢出的，放在内存里就不要想了（如果用户量大了放内存的话服务器也吃不消，放文件里io太频繁基本也不靠谱，还好有了Redis）。jwt最大的问题就在于后台没有存储用户状态，用户退出的话只是客户端删掉了token，然而此token在有效期内还是有效的，也就是说如果token泄露的话就麻烦了，不过token泄露的问题已经在上面讲过了，和cookie是同一个问题。那么最麻烦的就是怎么让一个token在用户注销后失效，以及后台强制退出，这个jwt是没办法的，因为jwt的无状态和用户状态维护是个矛盾冲突的话题。如果要解决就要建立一个黑名单，也就是把用户注销后的token放到redis里，然后每次校验黑名单（这里还是用到了数据库），</p>
-<h2 id="5-使用jwt-Redis黑名单的方案"><a href="#5-使用jwt-Redis黑名单的方案" class="headerlink" title="5. 使用jwt+Redis黑名单的方案"></a>5. 使用jwt+Redis黑名单的方案</h2><p>接上个问题，jwt推崇的无状态和跨服务器认证在数据库的出现后，貌似没有任何优势，真的没有优势吗？也不全是，至少有两个小优势，第一，存储黑名单（也就是注销后的用户或者黑户）比起存储登录之后的用户这个量级都是相当小的，存储量下降&amp;读取速度提高。第二个优势是app和pc能共用同一套认证机制，也就意味着前后端彻底的分离，不必再为cookie和session认证单独搭一个服务器。</p>
-<h2 id="6-用了jwt之后html服务怎么提供呢"><a href="#6-用了jwt之后html服务怎么提供呢" class="headerlink" title="6. 用了jwt之后html服务怎么提供呢"></a>6. 用了jwt之后html服务怎么提供呢</h2><p>对于前后端分离的项目来说，pc服务器的两个任务1是做认证（jwt已经解决），2是提供html服务。html服务可以交给nginx或者放到cdn，无论哪个方案都比tomcat之类的静态资源处理能力更强大，也就是说html和js等静态资源全部交给静态资源服务器来处理。那么安全问题又来了，怎么对文件做权限控制呢？对于一个前后端分离的项目来说，html一般不会嵌套后端的代码，所以html没有所谓的安全问题，换句话说html里根本没有任何有价值的内容。对于js来说，里面包含了业务逻辑，实际上对js做限制也是没有任何意义的，因为前端的代码是暴露给客户端的，即便控制，黑客登录之后也是能看到你的代码的，惟一能做的就是压缩混淆，把压缩后的代码放到线上，源码不放到线上，最大程度增加通过阅读js读取业务逻辑的难度（实际意义也不大，尤其对于有些公司压根连压缩这一步都不做的，更没有这个问题的顾虑了）。那么也就是说前后端分离的项目里html（没有后端代码嵌入）和js是没有安全的考虑必要的，真正要考虑的大概也就是图片的防盗链和pdf等静态资源的处理吧，这个因为对于后端不是很熟悉所以不做深入讨论，对于pdf等资源能想到的也就是通过需要授权的接口去拿pdf的路径吧。</p>
-<h2 id="7-到底要不要数据库"><a href="#7-到底要不要数据库" class="headerlink" title="7. 到底要不要数据库"></a>7. 到底要不要数据库</h2><p>如果不考虑用户注销后一定要token失效和强制退出需求的话，是不需要数据库的，即便加上redis对于传统方案来说也是有上文提到的两个优势。而且其实注销后一定要token失效主要也是考虑token泄露的问题（见上文），所以如果有踢出用户登录需求的话，还是要有数据库做黑名单存储的，一旦用户被拉入黑名单，就要立马停掉用户的签名发放，所以这个问题并不单单是认证的问题，还有签名发放的问题。</p>
-<h2 id="8-用户认证的终极解决方案（跨服务器）"><a href="#8-用户认证的终极解决方案（跨服务器）" class="headerlink" title="8. 用户认证的终极解决方案（跨服务器）"></a>8. 用户认证的终极解决方案（跨服务器）</h2><p>前提就是跨服务，实际上jwt本身已经实现了跨服务（无状态），既然服务端不存储用户状态，只要多个服务器之间使用共同的秘钥和加密方案就可以实现x.abc.com里登录之后在y.abc.com那台服务器做登录认证。但是问题上面也说了，如果不考虑注销和强制退出的情况的话，这个话题也就到处为止了。但是如果完美主义呢？当然还是要实现这两个功能，也就是要有黑名单服务器，或者说认证服务器auth.abc.com，无论x.abc.com还是y.abc.com里登录或者注销都要先通过auth.abc.com，但是带来的读写不一致和额外的认证开销问题大概也是一个历史性难题吧。或许也可以参考Oauth2.0的方案，做隐式认证。不存储用户的状态的话，jwt跨服务器应该是个比较简单的解决方案吧，但如果一个公司有跨服务器需求的话，那么规模之大，里面的后端童鞋应该有更为专业的方案吧，欢迎分享。此段不专业莫要踩我。</p>
+<h2 id="jwt如何解决续签问题"><a href="#jwt如何解决续签问题" class="headerlink" title="jwt如何解决续签问题"></a>jwt如何解决续签问题</h2><p>传统的cookie的续签方案一般都是框架自带的，session有效期30分钟，30分钟内如果有访问，session有效期被延长30分钟。那么jwt是怎么实现的呢，细节没看完，不过基本的逻辑是频繁重签名（不知道为什么有人这么干，开销应该不小，而且问题挺多），或者是有效期30分钟，服务器发现token要过期了，提前三分钟重签并返回新的token，客户端每次请求都检测新旧token，如果不一致更新本地token（这个可以放在http的请求预处理里，复杂度和开销都不大）。关于新token的发放导致旧token有效期内的访问失效的问题参见这里的<a href="https://segmentfault.com/q/1010000002449556" target="_blank" rel="noopener">token新旧更替问题讨论</a> 。这种方案就可以实现浏览器里传统cookie的续签需求，以及app7天内登陆就可以持续刷新登陆状态的问题（app比较特殊，每天第一次访问时刷新一下token）。</p>
+<h2 id="jwt如何解决注销问题"><a href="#jwt如何解决注销问题" class="headerlink" title="jwt如何解决注销问题"></a>jwt如何解决注销问题</h2><p>好了，jwt最大的问题来了，怎么注销？先看传统的session是怎么注销的：用户点击退出，调用后台退出接口，也就是session注销接口，依托于后台的状态更新。那么服务端做的呢，如果是用文件或者数据库存储的，那么通过删记录是可以后台强制踢出的，放在内存里就不要想了（如果用户量大了放内存的话服务器也吃不消，放文件里io太频繁基本也不靠谱，还好有了Redis）。jwt最大的问题就在于后台没有存储用户状态，用户退出的话只是客户端删掉了token，然而此token在有效期内还是有效的，也就是说如果token泄露的话就麻烦了，不过token泄露的问题已经在上面讲过了，和cookie是同一个问题。那么最麻烦的就是怎么让一个token在用户注销后失效，以及后台强制退出，这个jwt是没办法的，因为jwt的无状态和用户状态维护是个矛盾冲突的话题。如果要解决就要建立一个黑名单，也就是把用户注销后的token放到redis里，然后每次校验黑名单（这里还是用到了数据库），</p>
+<h2 id="使用jwt-Redis黑名单的方案"><a href="#使用jwt-Redis黑名单的方案" class="headerlink" title="使用jwt+Redis黑名单的方案"></a>使用jwt+Redis黑名单的方案</h2><p>接上个问题，jwt推崇的无状态和跨服务器认证在数据库的出现后，貌似没有任何优势，真的没有优势吗？也不全是，至少有两个小优势，第一，存储黑名单（也就是注销后的用户或者黑户）比起存储登录之后的用户这个量级都是相当小的，存储量下降&amp;读取速度提高。第二个优势是app和pc能共用同一套认证机制，也就意味着前后端彻底的分离，不必再为cookie和session认证单独搭一个服务器。</p>
+<h2 id="用了jwt之后html服务怎么提供呢"><a href="#用了jwt之后html服务怎么提供呢" class="headerlink" title="用了jwt之后html服务怎么提供呢"></a>用了jwt之后html服务怎么提供呢</h2><p>对于前后端分离的项目来说，pc服务器的两个任务1是做认证（jwt已经解决），2是提供html服务。html服务可以交给nginx或者放到cdn，无论哪个方案都比tomcat之类的静态资源处理能力更强大，也就是说html和js等静态资源全部交给静态资源服务器来处理。那么安全问题又来了，怎么对文件做权限控制呢？对于一个前后端分离的项目来说，html一般不会嵌套后端的代码，所以html没有所谓的安全问题，换句话说html里根本没有任何有价值的内容。对于js来说，里面包含了业务逻辑，实际上对js做限制也是没有任何意义的，因为前端的代码是暴露给客户端的，即便控制，黑客登录之后也是能看到你的代码的，惟一能做的就是压缩混淆，把压缩后的代码放到线上，源码不放到线上，最大程度增加通过阅读js读取业务逻辑的难度（实际意义也不大，尤其对于有些公司压根连压缩这一步都不做的，更没有这个问题的顾虑了）。那么也就是说前后端分离的项目里html（没有后端代码嵌入）和js是没有安全的考虑必要的，真正要考虑的大概也就是图片的防盗链和pdf等静态资源的处理吧，这个因为对于后端不是很熟悉所以不做深入讨论，对于pdf等资源能想到的也就是通过需要授权的接口去拿pdf的路径吧。</p>
+<h2 id="到底要不要数据库"><a href="#到底要不要数据库" class="headerlink" title="到底要不要数据库"></a>到底要不要数据库</h2><p>如果不考虑用户注销后一定要token失效和强制退出需求的话，是不需要数据库的，即便加上redis对于传统方案来说也是有上文提到的两个优势。而且其实注销后一定要token失效主要也是考虑token泄露的问题（见上文），所以如果有踢出用户登录需求的话，还是要有数据库做黑名单存储的，一旦用户被拉入黑名单，就要立马停掉用户的签名发放，所以这个问题并不单单是认证的问题，还有签名发放的问题。</p>
+<h2 id="用户认证的终极解决方案（跨服务器）"><a href="#用户认证的终极解决方案（跨服务器）" class="headerlink" title="用户认证的终极解决方案（跨服务器）"></a>用户认证的终极解决方案（跨服务器）</h2><p>前提就是跨服务，实际上jwt本身已经实现了跨服务（无状态），既然服务端不存储用户状态，只要多个服务器之间使用共同的秘钥和加密方案就可以实现x.abc.com里登录之后在y.abc.com那台服务器做登录认证。但是问题上面也说了，如果不考虑注销和强制退出的情况的话，这个话题也就到处为止了。但是如果完美主义呢？当然还是要实现这两个功能，也就是要有黑名单服务器，或者说认证服务器auth.abc.com，无论x.abc.com还是y.abc.com里登录或者注销都要先通过auth.abc.com，但是带来的读写不一致和额外的认证开销问题大概也是一个历史性难题吧。或许也可以参考Oauth2.0的方案，做隐式认证。不存储用户的状态的话，jwt跨服务器应该是个比较简单的解决方案吧，但如果一个公司有跨服务器需求的话，那么规模之大，里面的后端童鞋应该有更为专业的方案吧，欢迎分享。此段不专业莫要踩我。</p>
 <hr>
 <h2 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h2><p>上文阐述了作为一个卑微的前端能想到的jwt的问题和思考，总结来说，使用jwt可以实现真正的前后端分离，浏览器可以和app用一样的认证机制，无论对服务器的搭建还是服务器开销都是不错的优化，至于黑名单的设置，这个看需求吧。</p>
 <hr>
@@ -470,12 +480,6 @@
     </div>
     
     
-    
-
-    
-
-    
-
     
 
     
@@ -503,7 +507,7 @@
   <p><span>本文标题:</span><a href="/2017/12/27/关于jwt的思考/">关于jwt的思考</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Layne 的个人博客">Layne</a></p>
   <p><span>发布时间:</span>2017年12月27日 - 14:12</p>
-  <p><span>最后更新:</span>2017年12月27日 - 14:12</p>
+  <p><span>最后更新:</span>2017年12月27日 - 16:12</p>
   <p><span>原始链接:</span><a href="/2017/12/27/关于jwt的思考/" title="关于jwt的思考">https://gengxuelei.github.io/2017/12/27/关于jwt的思考/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://gengxuelei.github.io/2017/12/27/关于jwt的思考/"  aria-label="复制成功！"></i></span>
   </p>
@@ -528,6 +532,40 @@
       </div>
     
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/imgs/pay/wechatpay.jpg" alt="Layne 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/imgs/pay/alipay.jpg" alt="Layne 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
 
     <footer class="post-footer">
       
@@ -690,25 +728,25 @@
                 <span class="links-of-author-item">
                   <a href="http://www.jianshu.com/u/c93daa723718" target="_blank" title="简书">
                     
-                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                      <i class="fa fa-fw fa-heartbeat"></i>简书</a>
                 </span>
               
                 <span class="links-of-author-item">
                   <a href="https://segmentfault.com/u/gengxuelei" target="_blank" title="SegmentFault">
                     
-                      <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                      <i class="fa fa-fw fa-meh-o"></i>SegmentFault</a>
                 </span>
               
                 <span class="links-of-author-item">
                   <a href="http://blog.csdn.net/gengxuelei" target="_blank" title="csdn">
                     
-                      <i class="fa fa-fw fa-globe"></i>csdn</a>
+                      <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
                 </span>
               
                 <span class="links-of-author-item">
                   <a href="https://juejin.im/user/55d8a58d60b2f3a9d4bdd124" target="_blank" title="掘金">
                     
-                      <i class="fa fa-fw fa-globe"></i>掘金</a>
+                      <i class="fa fa-fw fa-spinner"></i>掘金</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -775,7 +813,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-jwt是否需要服务器存储用户状态"><span class="nav-number">1.</span> <span class="nav-text"><a href="#1-jwt&#x662F;&#x5426;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x72B6;&#x6001;" class="headerlink" title="1. jwt&#x662F;&#x5426;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x72B6;&#x6001;"></a>1. jwt&#x662F;&#x5426;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x72B6;&#x6001;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-jwt方案中token的安全问题"><span class="nav-number">2.</span> <span class="nav-text"><a href="#2-jwt&#x65B9;&#x6848;&#x4E2D;token&#x7684;&#x5B89;&#x5168;&#x95EE;&#x9898;" class="headerlink" title="2. jwt&#x65B9;&#x6848;&#x4E2D;token&#x7684;&#x5B89;&#x5168;&#x95EE;&#x9898;"></a>2. jwt&#x65B9;&#x6848;&#x4E2D;token&#x7684;&#x5B89;&#x5168;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-jwt如何解决续签问题"><span class="nav-number">3.</span> <span class="nav-text"><a href="#3-jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x7EED;&#x7B7E;&#x95EE;&#x9898;" class="headerlink" title="3. jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x7EED;&#x7B7E;&#x95EE;&#x9898;"></a>3. jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x7EED;&#x7B7E;&#x95EE;&#x9898;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-jwt如何解决注销问题"><span class="nav-number"></span> <span class="nav-text"><a href="#4-jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x6CE8;&#x9500;&#x95EE;&#x9898;" class="headerlink" title="4. jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x6CE8;&#x9500;&#x95EE;&#x9898;"></a>4. jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x6CE8;&#x9500;&#x95EE;&#x9898;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-使用jwt-Redis黑名单的方案"><span class="nav-number">1.</span> <span class="nav-text"><a href="#5-&#x4F7F;&#x7528;jwt-Redis&#x9ED1;&#x540D;&#x5355;&#x7684;&#x65B9;&#x6848;" class="headerlink" title="5. &#x4F7F;&#x7528;jwt+Redis&#x9ED1;&#x540D;&#x5355;&#x7684;&#x65B9;&#x6848;"></a>5. &#x4F7F;&#x7528;jwt+Redis&#x9ED1;&#x540D;&#x5355;&#x7684;&#x65B9;&#x6848;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-用了jwt之后html服务怎么提供呢"><span class="nav-number">2.</span> <span class="nav-text"><a href="#6-&#x7528;&#x4E86;jwt&#x4E4B;&#x540E;html&#x670D;&#x52A1;&#x600E;&#x4E48;&#x63D0;&#x4F9B;&#x5462;" class="headerlink" title="6. &#x7528;&#x4E86;jwt&#x4E4B;&#x540E;html&#x670D;&#x52A1;&#x600E;&#x4E48;&#x63D0;&#x4F9B;&#x5462;"></a>6. &#x7528;&#x4E86;jwt&#x4E4B;&#x540E;html&#x670D;&#x52A1;&#x600E;&#x4E48;&#x63D0;&#x4F9B;&#x5462;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-到底要不要数据库"><span class="nav-number">3.</span> <span class="nav-text"><a href="#7-&#x5230;&#x5E95;&#x8981;&#x4E0D;&#x8981;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="7. &#x5230;&#x5E95;&#x8981;&#x4E0D;&#x8981;&#x6570;&#x636E;&#x5E93;"></a>7. &#x5230;&#x5E95;&#x8981;&#x4E0D;&#x8981;&#x6570;&#x636E;&#x5E93;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-用户认证的终极解决方案（跨服务器）"><span class="nav-number">4.</span> <span class="nav-text"><a href="#8-&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7684;&#x7EC8;&#x6781;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;&#x8DE8;&#x670D;&#x52A1;&#x5668;&#xFF09;" class="headerlink" title="8. &#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7684;&#x7EC8;&#x6781;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;&#x8DE8;&#x670D;&#x52A1;&#x5668;&#xFF09;"></a>8. &#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7684;&#x7EC8;&#x6781;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;&#x8DE8;&#x670D;&#x52A1;&#x5668;&#xFF09;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论："><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x7ED3;&#x8BBA;&#xFF1A;" class="headerlink" title="&#x7ED3;&#x8BBA;&#xFF1A;"></a>&#x7ED3;&#x8BBA;&#xFF1A;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt是否需要服务器存储用户状态"><span class="nav-number">1.</span> <span class="nav-text"><a href="#jwt&#x662F;&#x5426;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x72B6;&#x6001;" class="headerlink" title="jwt&#x662F;&#x5426;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x72B6;&#x6001;"></a>jwt&#x662F;&#x5426;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#x7528;&#x6237;&#x72B6;&#x6001;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt方案中token的安全问题"><span class="nav-number">2.</span> <span class="nav-text"><a href="#jwt&#x65B9;&#x6848;&#x4E2D;token&#x7684;&#x5B89;&#x5168;&#x95EE;&#x9898;" class="headerlink" title="jwt&#x65B9;&#x6848;&#x4E2D;token&#x7684;&#x5B89;&#x5168;&#x95EE;&#x9898;"></a>jwt&#x65B9;&#x6848;&#x4E2D;token&#x7684;&#x5B89;&#x5168;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt如何解决续签问题"><span class="nav-number">3.</span> <span class="nav-text"><a href="#jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x7EED;&#x7B7E;&#x95EE;&#x9898;" class="headerlink" title="jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x7EED;&#x7B7E;&#x95EE;&#x9898;"></a>jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x7EED;&#x7B7E;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jwt如何解决注销问题"><span class="nav-number">4.</span> <span class="nav-text"><a href="#jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x6CE8;&#x9500;&#x95EE;&#x9898;" class="headerlink" title="jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x6CE8;&#x9500;&#x95EE;&#x9898;"></a>jwt&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x6CE8;&#x9500;&#x95EE;&#x9898;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用jwt-Redis黑名单的方案"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;jwt-Redis&#x9ED1;&#x540D;&#x5355;&#x7684;&#x65B9;&#x6848;" class="headerlink" title="&#x4F7F;&#x7528;jwt+Redis&#x9ED1;&#x540D;&#x5355;&#x7684;&#x65B9;&#x6848;"></a>&#x4F7F;&#x7528;jwt+Redis&#x9ED1;&#x540D;&#x5355;&#x7684;&#x65B9;&#x6848;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用了jwt之后html服务怎么提供呢"><span class="nav-number">6.</span> <span class="nav-text"><a href="#&#x7528;&#x4E86;jwt&#x4E4B;&#x540E;html&#x670D;&#x52A1;&#x600E;&#x4E48;&#x63D0;&#x4F9B;&#x5462;" class="headerlink" title="&#x7528;&#x4E86;jwt&#x4E4B;&#x540E;html&#x670D;&#x52A1;&#x600E;&#x4E48;&#x63D0;&#x4F9B;&#x5462;"></a>&#x7528;&#x4E86;jwt&#x4E4B;&#x540E;html&#x670D;&#x52A1;&#x600E;&#x4E48;&#x63D0;&#x4F9B;&#x5462;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#到底要不要数据库"><span class="nav-number">7.</span> <span class="nav-text"><a href="#&#x5230;&#x5E95;&#x8981;&#x4E0D;&#x8981;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x5230;&#x5E95;&#x8981;&#x4E0D;&#x8981;&#x6570;&#x636E;&#x5E93;"></a>&#x5230;&#x5E95;&#x8981;&#x4E0D;&#x8981;&#x6570;&#x636E;&#x5E93;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户认证的终极解决方案（跨服务器）"><span class="nav-number">8.</span> <span class="nav-text"><a href="#&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7684;&#x7EC8;&#x6781;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;&#x8DE8;&#x670D;&#x52A1;&#x5668;&#xFF09;" class="headerlink" title="&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7684;&#x7EC8;&#x6781;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;&#x8DE8;&#x670D;&#x52A1;&#x5668;&#xFF09;"></a>&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#x7684;&#x7EC8;&#x6781;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF08;&#x8DE8;&#x670D;&#x52A1;&#x5668;&#xFF09;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论："><span class="nav-number">9.</span> <span class="nav-text"><a href="#&#x7ED3;&#x8BBA;&#xFF1A;" class="headerlink" title="&#x7ED3;&#x8BBA;&#xFF1A;"></a>&#x7ED3;&#x8BBA;&#xFF1A;</span></a></li></ol></div>
             
 
           </div>

@@ -218,6 +218,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -458,15 +468,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -598,7 +607,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,385 字
+                  2,375 字
                 </span>
               
 
@@ -641,8 +650,8 @@
 <p>关于jwt的思考<br>jwt是个做用户权限认证的方案，科普的内容参考相关文档吧，这里提出几个关于jwt的思考：</p>
 </blockquote>
 <p><strong>现有项目架构：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pc项目-&gt;pc服务器-&gt;api服务器</span><br><span class="line">app项目-&gt;api服务器</span><br></pre></td></tr></table></figure></p>
-<h2 id="1-jwt是否需要服务器存储用户状态"><a href="#1-jwt是否需要服务器存储用户状态" class="headerlink" title="1. jwt是否需要服务器存储用户状态"></a>1. jwt是否需要服务器存储用户状态</h2><p>按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个可能需要对比测试，但从原理和常识来讲，存库读库的成本应该更高一点。无库产生的加解密开销相对于读写库应该是非常小的，而且无库可以轻松做到跨服务器的认证。</p>
-<h2 id="2-jwt方案中token的安全问题"><a href="#2-jwt方案中token的安全问题" class="headerlink" title="2. jwt方案中token的安全问题"></a>2. jwt方案中token的安全问题</h2><p>分为两个安全问题：</p>
+<h2 id="jwt是否需要服务器存储用户状态"><a href="#jwt是否需要服务器存储用户状态" class="headerlink" title="jwt是否需要服务器存储用户状态"></a>jwt是否需要服务器存储用户状态</h2><p>按照jwt的思路，服务端是不需要存储用户状态的，只要有秘钥+过期时间就可以实现用户的认证和过期，至于读库vs加解密验证哪个过程对服务器的压力更大，这个可能需要对比测试，但从原理和常识来讲，存库读库的成本应该更高一点。无库产生的加解密开销相对于读写库应该是非常小的，而且无库可以轻松做到跨服务器的认证。</p>
+<h2 id="jwt方案中token的安全问题"><a href="#jwt方案中token的安全问题" class="headerlink" title="jwt方案中token的安全问题"></a>jwt方案中token的安全问题</h2><p>两个安全问题：</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/12/27/关于jwt的思考/#more" rel="contents">
@@ -659,15 +668,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -862,15 +870,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1066,15 +1073,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1347,15 +1353,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1547,15 +1552,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1744,15 +1748,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -1944,15 +1947,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -2142,15 +2144,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -2334,15 +2335,14 @@
 
     
 
-    
-
-    
-
-    
-
     <!--版权声明-->
     
 
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
@@ -2469,25 +2469,25 @@
                 <span class="links-of-author-item">
                   <a href="http://www.jianshu.com/u/c93daa723718" target="_blank" title="简书">
                     
-                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                      <i class="fa fa-fw fa-heartbeat"></i>简书</a>
                 </span>
               
                 <span class="links-of-author-item">
                   <a href="https://segmentfault.com/u/gengxuelei" target="_blank" title="SegmentFault">
                     
-                      <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                      <i class="fa fa-fw fa-meh-o"></i>SegmentFault</a>
                 </span>
               
                 <span class="links-of-author-item">
                   <a href="http://blog.csdn.net/gengxuelei" target="_blank" title="csdn">
                     
-                      <i class="fa fa-fw fa-globe"></i>csdn</a>
+                      <i class="fa fa-fw fa-crosshairs"></i>csdn</a>
                 </span>
               
                 <span class="links-of-author-item">
                   <a href="https://juejin.im/user/55d8a58d60b2f3a9d4bdd124" target="_blank" title="掘金">
                     
-                      <i class="fa fa-fw fa-globe"></i>掘金</a>
+                      <i class="fa fa-fw fa-spinner"></i>掘金</a>
                 </span>
               
                 <span class="links-of-author-item">
