@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="安装步骤首先安装最新版的node，然后执行以下命令更改npm镜像： 12npm i -g nrm --registry=https://registry.npm.taobao.orgnrm use taobao 然后执行以下命令安装testrpc并启动： 12npm install -g ethereumjs-testrpctestrpc 然后新开一个窗口创建truffle项目：">
+<meta name="description" content="安装步骤首先安装最新版的node，然后执行以下命令更改npm镜像： 12npm i -g nrm --registry=https://registry.npm.taobao.orgnrm use taobao 然后执行以下命令安装ganache-cli（原testrpc）并启动： 12npm install -g ganache-cliganache-cli 然后新开一个窗口创建truffle项">
 <meta name="keywords" content="truffle,区块链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="truffle安装指南">
 <meta property="og:url" content="https://gengxuelei.github.io/2017/12/26/truffle安装指南/index.html">
 <meta property="og:site_name" content="Layne">
-<meta property="og:description" content="安装步骤首先安装最新版的node，然后执行以下命令更改npm镜像： 12npm i -g nrm --registry=https://registry.npm.taobao.orgnrm use taobao 然后执行以下命令安装testrpc并启动： 12npm install -g ethereumjs-testrpctestrpc 然后新开一个窗口创建truffle项目：">
+<meta property="og:description" content="安装步骤首先安装最新版的node，然后执行以下命令更改npm镜像： 12npm i -g nrm --registry=https://registry.npm.taobao.orgnrm use taobao 然后执行以下命令安装ganache-cli（原testrpc）并启动： 12npm install -g ganache-cliganache-cli 然后新开一个窗口创建truffle项">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-26T02:38:02.756Z">
+<meta property="og:updated_time" content="2018-01-18T07:11:38.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="truffle安装指南">
-<meta name="twitter:description" content="安装步骤首先安装最新版的node，然后执行以下命令更改npm镜像： 12npm i -g nrm --registry=https://registry.npm.taobao.orgnrm use taobao 然后执行以下命令安装testrpc并启动： 12npm install -g ethereumjs-testrpctestrpc 然后新开一个窗口创建truffle项目：">
+<meta name="twitter:description" content="安装步骤首先安装最新版的node，然后执行以下命令更改npm镜像： 12npm i -g nrm --registry=https://registry.npm.taobao.orgnrm use taobao 然后执行以下命令安装ganache-cli（原testrpc）并启动： 12npm install -g ganache-cliganache-cli 然后新开一个窗口创建truffle项">
 
 
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  348 字
+                  430 字
                 </span>
               
 
@@ -450,25 +450,29 @@
       
         <h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>首先安装最新版的node，然后执行以下命令更改npm镜像：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i -g nrm --registry=https://registry.npm.taobao.org</span><br><span class="line">nrm use taobao</span><br></pre></td></tr></table></figure>
-<p>然后执行以下命令安装testrpc并启动：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ethereumjs-testrpc</span><br><span class="line">testrpc</span><br></pre></td></tr></table></figure>
+<p>然后执行以下命令安装ganache-cli（原testrpc）并启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ganache-cli</span><br><span class="line">ganache-cli</span><br></pre></td></tr></table></figure>
 <p>然后新开一个窗口创建truffle项目：</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装truffle</span><br><span class="line">npm install -g truffle</span><br><span class="line"># 创建项目目录</span><br><span class="line">mkdir /home/eth/truffle-webpack/ -p</span><br><span class="line">cd /home/eth/truffle-webpack/</span><br><span class="line"># 初始化项目</span><br><span class="line">truffle init webpack</span><br><span class="line"># 编译项目</span><br><span class="line">truffle compile</span><br><span class="line"># 发布项目</span><br><span class="line">truffle migrate</span><br></pre></td></tr></table></figure>
-<p>然后修改package.json文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --host 0.0.0.0&quot;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装truffle</span><br><span class="line">npm install -g truffle</span><br><span class="line"># 创建项目目录</span><br><span class="line">mkdir /home/eth/truffle-webpack/ -p</span><br><span class="line">cd /home/eth/truffle-webpack/</span><br><span class="line"># 初始化项目</span><br><span class="line">truffle unbox webpack</span><br><span class="line"># 编译项目</span><br><span class="line">truffle compile</span><br><span class="line"># 发布项目</span><br><span class="line">truffle migrate</span><br></pre></td></tr></table></figure>
+<p>然后修改<code>package.json</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --host 0.0.0.0 --port 8080&quot;</span><br></pre></td></tr></table></figure></p>
+<p>然后修改<code>truffle.js</code>文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">development: &#123;</span><br><span class="line">  host: &apos;yourIp&apos;,</span><br><span class="line">  port: 8545,</span><br><span class="line">  network_id: &apos;*&apos; // Match any network id</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后修改<code>app/javascripts/app.js</code>文件：<br>把：<br><del>window.web3 = new Web3(new Web3.providers.HttpProvider(“<a href="http://127.0.0.1:9545" target="_blank" rel="noopener">http://127.0.0.1:9545</a>“));</del><br>改成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.web3 = new Web3(new Web3.providers.HttpProvider(&quot;http://yourIp:8545&quot;));</span><br></pre></td></tr></table></figure></p>
 <p>然后执行下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
 <p>通过浏览器访问：ip:8080</p>
-<h2 id="Linux环境下重启进程"><a href="#Linux环境下重启进程" class="headerlink" title="Linux环境下重启进程"></a>Linux环境下重启进程</h2><p>通过以下命令查看8080和8545端口的占用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep &lt;port&gt;</span><br></pre></td></tr></table></figure></p>
-<p>查到pid之后执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps &lt;pid&gt;</span><br><span class="line">kill -9 &lt;pid&gt;</span><br></pre></td></tr></table></figure></p>
-<p>杀掉testrpc和truffle的进程之后执行：</p>
-<p>1.开启testrpc服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">testrpc</span><br></pre></td></tr></table></figure></p>
+<h2 id="重启进程"><a href="#重启进程" class="headerlink" title="重启进程"></a>重启进程</h2><p><strong>通过以下命令查看8080和8545端口的占用：</strong><br><em>Linux:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep &lt;port&gt;</span><br></pre></td></tr></table></figure></p>
+<p><em>Windows:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr &lt;port&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>查到pid之后执行以下命令：</strong><br><em>Linux:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps &lt;pid&gt;</span><br><span class="line">kill -9 &lt;pid&gt;</span><br></pre></td></tr></table></figure></p>
+<p><em>Windows:</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /F /PID &lt;pid&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>杀掉ganache-cli和truffle的进程之后执行：</strong></p>
+<p>1.开启ganache-cli服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ganache-cli</span><br></pre></td></tr></table></figure></p>
 <p>2.开启truffle服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/eth/truffle-webpack/</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
 <p>3.通过浏览器访问：ip:8080</p>
 <h2 id="碰到的问题："><a href="#碰到的问题：" class="headerlink" title="碰到的问题："></a>碰到的问题：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: fsevents is not a constructor</span><br></pre></td></tr></table></figure>
 <p>所以需要使用<code>truffle init webpack</code> 来代替官方的<code>truffle init</code>命令</p>
 <p>然后需要修改package.json文件以支持<code>ip：port</code>的访问（默认是<code>localhost：port</code>）</p>
 <p>然后用<code>npm run dev</code>来代替官方<code>truffle serve</code>命令</p>
-<p>至此，通过访问<a href="#">localhost:8080</a>即可（要保证testrpc在后台运行）</p>
+<p>至此，通过访问<a href="#">localhost:8080</a>即可（要保证ganache-cli在后台运行）</p>
 
       
     </div>
@@ -496,7 +500,7 @@
   <p><span>本文标题:</span><a href="/2017/12/26/truffle安装指南/">truffle安装指南</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Layne 的个人博客">Layne</a></p>
   <p><span>发布时间:</span>2017年12月26日 - 10:12</p>
-  <p><span>最后更新:</span>2017年12月26日 - 10:12</p>
+  <p><span>最后更新:</span>2018年01月18日 - 15:01</p>
   <p><span>原始链接:</span><a target="_blank" href="https://gengxuelei.github.io/2017/12/26/truffle安装指南/" title="truffle安装指南">https://gengxuelei.github.io/2017/12/26/truffle安装指南/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://gengxuelei.github.io/2017/12/26/truffle安装指南/" aria-label="复制成功！"></i></span>
   </p>
@@ -796,7 +800,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装步骤"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;&#x6B65;&#x9AA4;" class="headerlink" title="&#x5B89;&#x88C5;&#x6B65;&#x9AA4;"></a>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux环境下重启进程"><span class="nav-number">2.</span> <span class="nav-text"><a href="#Linux&#x73AF;&#x5883;&#x4E0B;&#x91CD;&#x542F;&#x8FDB;&#x7A0B;" class="headerlink" title="Linux&#x73AF;&#x5883;&#x4E0B;&#x91CD;&#x542F;&#x8FDB;&#x7A0B;"></a>Linux&#x73AF;&#x5883;&#x4E0B;&#x91CD;&#x542F;&#x8FDB;&#x7A0B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碰到的问题："><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x78B0;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;" class="headerlink" title="&#x78B0;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;"></a>&#x78B0;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装步骤"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;&#x6B65;&#x9AA4;" class="headerlink" title="&#x5B89;&#x88C5;&#x6B65;&#x9AA4;"></a>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启进程"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x91CD;&#x542F;&#x8FDB;&#x7A0B;" class="headerlink" title="&#x91CD;&#x542F;&#x8FDB;&#x7A0B;"></a>&#x91CD;&#x542F;&#x8FDB;&#x7A0B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#碰到的问题："><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x78B0;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;" class="headerlink" title="&#x78B0;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;"></a>&#x78B0;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;</span></a></li></ol></div>
             
 
           </div>
@@ -820,7 +824,7 @@
 <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -843,7 +847,7 @@
 
 <div class="theme-info">
   <i class="fa fa-pencil"></i>
-  <span class="post-count">博客全站共 8.3k 字</span>
+  <span class="post-count">博客全站共 8.4k 字</span>
 </div>
 
 <!--
