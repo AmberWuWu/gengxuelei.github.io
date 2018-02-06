@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://gengxuelei.github.io/blog/imgs/docker的安装配置/1.png">
 <meta property="og:image" content="https://gengxuelei.github.io/blog/imgs/docker的安装配置/2.png">
 <meta property="og:image" content="https://gengxuelei.github.io/blog/imgs/docker的安装配置/3.png">
-<meta property="og:updated_time" content="2017-12-26T02:10:22.212Z">
+<meta property="og:updated_time" content="2018-02-06T07:37:05.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker的安装配置">
 <meta name="twitter:description" content="docker安装：https://dev.aliyun.com/search.html 通过管理中心进去获取自己的国内镜像加速器（注册登录阿里云账号）：">
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  415 字
+                  527 字
                 </span>
               
 
@@ -453,7 +453,7 @@
 
       
         <h2 id="docker安装："><a href="#docker安装：" class="headerlink" title="docker安装："></a>docker安装：</h2><p><a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a></p>
-<p>通过管理中心进去获取自己的国内镜像加速器（注册登录阿里云账号）：</p>
+<p>通过管理中心进去获取自己的<strong>国内镜像加速器</strong>（注册登录阿里云账号）：</p>
 <img src="/blog/imgs/docker的安装配置/1.png">
 <a id="more"></a>
 <p><img src="/blog/imgs/docker的安装配置/2.png" alt="avatar"></p>
@@ -467,6 +467,7 @@
 <p><a href="http://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/docker/docker-tutorial.html</a></p>
 <h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker version  //  查看版本</span><br><span class="line"></span><br><span class="line">docker info  //  查看配置信息</span><br><span class="line"></span><br><span class="line">docker images // 查看images</span><br><span class="line"></span><br><span class="line">docker ps  -a  // 查看container</span><br><span class="line"></span><br><span class="line">docker pull &lt;registry&gt;  // 从镜像仓库中拉取或者更新指定镜像</span><br><span class="line"></span><br><span class="line">docker run &lt;registry&gt;  // 创建一个新的容器并运行一个命令</span><br><span class="line"></span><br><span class="line">docker exec &lt;container&gt;  // 在运行的容器中执行命令</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run/exec</span><br><span class="line"></span><br><span class="line">-i 交互式 -t 伪终端 -d 守护进程后台运行</span><br><span class="line"></span><br><span class="line">一般会使用-it参数进入（退出后进程关闭），需要进程持续运行添加-d参数</span><br><span class="line"></span><br><span class="line">docker rm 删除container</span><br><span class="line"></span><br><span class="line">-v 删除本地挂载目录，-f强制删除</span><br><span class="line"></span><br><span class="line">docker rmi 删除image</span><br></pre></td></tr></table></figure>
+<h2 id="docker安装centos"><a href="#docker安装centos" class="headerlink" title="docker安装centos"></a>docker安装centos</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拉取centos镜像并启动</span></span><br><span class="line">docker pull centos</span><br><span class="line">docker run -itd centos:latest /bin/bash</span><br><span class="line">docker ps</span><br><span class="line">docker <span class="built_in">exec</span> -it &lt;containerId&gt; /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入centos容器之后的简单配置</span></span><br><span class="line">yum install -y wget</span><br><span class="line">cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo </span><br><span class="line">wget -P /etc/yum.repos.d/ http://mirrors.aliyun.com/repo/epel-7.repo </span><br><span class="line">yum clean all &amp;&amp; yum makecache</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
 <h2 id="centos7安装docker："><a href="#centos7安装docker：" class="headerlink" title="centos7安装docker："></a>centos7安装docker：</h2><p><a href="https://yq.aliyun.com/articles/110806" target="_blank" rel="noopener">https://yq.aliyun.com/articles/110806</a></p>
 <p><em>新手先安装好docker ，然后docker version和docker info看一下，然后看一下菜鸟教程能够有个大致了解即可。老鸟请忽略以上内容。</em></p>
 <p>祝君好运😀</p>
@@ -497,7 +498,7 @@
   <p><span>本文标题:</span><a href="/2017/12/22/docker的安装配置/">docker的安装配置</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Layne 的个人博客">Layne</a></p>
   <p><span>发布时间:</span>2017年12月22日 - 10:12</p>
-  <p><span>最后更新:</span>2017年12月26日 - 10:12</p>
+  <p><span>最后更新:</span>2018年02月06日 - 15:02</p>
   <p><span>原始链接:</span><a target="_blank" href="https://gengxuelei.github.io/2017/12/22/docker的安装配置/" title="docker的安装配置">https://gengxuelei.github.io/2017/12/22/docker的安装配置/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://gengxuelei.github.io/2017/12/22/docker的安装配置/" aria-label="复制成功！"></i></span>
   </p>
@@ -795,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker安装："><span class="nav-number">1.</span> <span class="nav-text"><a href="#docker&#x5B89;&#x88C5;&#xFF1A;" class="headerlink" title="docker&#x5B89;&#x88C5;&#xFF1A;"></a>docker&#x5B89;&#x88C5;&#xFF1A;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令："><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF1A;" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF1A;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF1A;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7安装docker："><span class="nav-number">3.</span> <span class="nav-text"><a href="#centos7&#x5B89;&#x88C5;docker&#xFF1A;" class="headerlink" title="centos7&#x5B89;&#x88C5;docker&#xFF1A;"></a>centos7&#x5B89;&#x88C5;docker&#xFF1A;</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker安装："><span class="nav-number">1.</span> <span class="nav-text"><a href="#docker&#x5B89;&#x88C5;&#xFF1A;" class="headerlink" title="docker&#x5B89;&#x88C5;&#xFF1A;"></a>docker&#x5B89;&#x88C5;&#xFF1A;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令："><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF1A;" class="headerlink" title="&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF1A;"></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF1A;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker安装centos"><span class="nav-number">3.</span> <span class="nav-text"><a href="#docker&#x5B89;&#x88C5;centos" class="headerlink" title="docker&#x5B89;&#x88C5;centos"></a>docker&#x5B89;&#x88C5;centos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7安装docker："><span class="nav-number">4.</span> <span class="nav-text"><a href="#centos7&#x5B89;&#x88C5;docker&#xFF1A;" class="headerlink" title="centos7&#x5B89;&#x88C5;docker&#xFF1A;"></a>centos7&#x5B89;&#x88C5;docker&#xFF1A;</span></a></li></ol></div>
             
 
           </div>
@@ -842,7 +843,7 @@
 
 <div class="theme-info">
   <i class="fa fa-pencil"></i>
-  <span class="post-count">博客全站共 8.4k 字</span>
+  <span class="post-count">博客全站共 8.5k 字</span>
 </div>
 
 <!--

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gengxuelei.github.io/2017/12/22/docker%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2018-02-06T07:37:05.756Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gengxuelei.github.io/2017/12/26/truffle%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2018-01-18T07:11:38.620Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>https://gengxuelei.github.io/2017/12/27/centos%E9%85%8D%E7%BD%AEjdk%E3%80%81svn%E3%80%81maven%E3%80%81tomcat/</loc>
     
     <lastmod>2017-12-27T03:34:58.007Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://gengxuelei.github.io/2017/12/22/docker%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
-    
-    <lastmod>2017-12-26T02:10:22.212Z</lastmod>
     
   </url>
   
